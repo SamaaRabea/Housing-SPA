@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -16,6 +15,7 @@ import { UserLogInComponent } from './user/user-logIn/user-logIn.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { UserServiceService } from './services/user-service.service';
 import { AlertifyService } from './services/alertify.service';
+import { LogInService } from './services/logIn.service';
 const appRoutes:Routes=[
   {path:'',component:PropertyListComponent},
   {path:'rent-property',component:PropertyListComponent},
@@ -44,7 +44,7 @@ const appRoutes:Routes=[
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [ApiService,UserServiceService,AlertifyService],
+  providers: [ApiService,UserServiceService,AlertifyService,LogInService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
